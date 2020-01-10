@@ -49,11 +49,195 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@h2: 30px;
+@background: lightgrey;
+@font: 'Gayathri', sans-serif;
+@mobile: gold;
+
+.margin(){
+	margin-left: 4%;
+	padding: 1%;
+}
+
+.flex-layout(@align, @justify) {
+	display: flex;
+	align-items: @align;
+	justify-content: @justify;
+}
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
     height: 100%;
+	font-family: @font;
+	
 }
 
+nav {
+	width: 80%;
+	.flex-layout(space-between, flex-end);
+	margin-left: 10%;
+
+	a {
+		flex-direction: row;
+		width: 20%;
+		
+		text-decoration: none;
+		color: black;
+		padding:1%;
+	}
+}
+
+header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	
+	.header_content {
+		width: 80%;
+		background: @background;	
+		
+		@media (max-width: 500px){
+			background: @mobile;
+			font-size: 12px;
+		}
+	
+		img {
+			padding: 2%;
+			margin-left: 3%;
+		}
+
+		hr {
+			width: 90%;
+		}
+	
+		h1 {
+			font-size: 50px;
+			.margin();
+		}
+
+		h3 {
+			font-size: 25px;
+			.margin();
+		}
+		
+		p {
+			.margin();
+		}
+	
+		button {
+			margin: 5% 5% 10% 5%;
+			width: 20%;
+			height: 10%;
+			padding: 1%;
+			border-radius: 10px;
+			font-size: 15px;
+			color: white;
+			background-color: darken(@background, 30%);
+		}
+	}
+}
+
+.section_one {
+	display: flex;
+	height: 40%;
+
+	.listen {
+		width: 40%;
+		margin-left: 10%;
+	
+	@media (max-width: 500px){
+		font-size: 12px;
+	}
+		h2 {
+			font-size: @h2;
+			padding: 4% 0% 4% 0%;
+		}
+	
+	}
+
+	.skills {
+		width: 40%;
+		margin-right: 10%;
+
+		h2 {
+			font-size: @h2;
+			padding: 4% 0% 4% 0%;
+			border-bottom: 1px solid black;
+		}
+		
+		.grey {
+			background-color: lightgrey;
+		
+			@media(max-width: 500px){
+				background-color: @mobile;
+			}
+		}
+	
+		p {
+			border-bottom: 1px solid black;
+			border-left: 1px solid black;
+			border-right: 1px solid black;
+			padding: 2%;
+			height: 15%;
+			width: 100%;
+		}
+	}
+}
+
+.history {
+	width: 100%;
+
+	h2 {
+		margin-left: 10%;
+		font-size: @h2;
+	}
+	
+	hr {
+		width: 80%;
+	}
+	
+	.title {
+		display: inline-block;
+		width: 20%;
+		font-size: 20px;
+		flex-wrap: wrap;
+		font-weight: bold;
+	}
+	
+	.years {
+			margin-left: 10%;
+		}
+	
+	p {
+		display: inline-block;
+		width: 20%;
+		padding: 1% 0%;
+	}
+
+	.margin {
+		margin-left: 10%;
+	}
+
+}
+footer {
+	.flex-layout(center, center);
+	height: 5%;
+	width: 80%;
+	margin-left: 10%;
+	background-color: darken(@background, 30%);
+
+		@media(max-width: 500px){
+		background-color: @mobile;
+	}
+	
+	p {
+		color: white;
+	
+		@media(max-width: 500px){
+		color: black;
+	}
+	}
+}
